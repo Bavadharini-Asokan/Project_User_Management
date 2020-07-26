@@ -1,6 +1,7 @@
 class AddusersController < ApplicationController
   def new
     @projectid = params[:project_id]
+    @department = params[:department]
   end
   def create
     # render plain: params[:projects_user].inspect

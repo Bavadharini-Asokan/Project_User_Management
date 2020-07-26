@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   def index
     @user = User.select('users.id','users.first_name','users.last_name','departments.department_name').joins(:department)
   end
+  def show
+    @userid = params[:id]
+    @projectuser = ProjectsUser.where(:user_id => params[:id]).distinct
+    @department = params[:department]
+  end
   def new
     @user = User.new
   end

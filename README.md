@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# Project_User_Management
->>>>>>> 615d608a77a9e8a5a59510a8cc8915985458ffb2

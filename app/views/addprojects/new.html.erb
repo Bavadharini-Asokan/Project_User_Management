@@ -1,10 +1,11 @@
 <div class="container" style="width:500px;margin-top:50px;">
-  <%= form_with model: @department, scope: :department, class:'form-group',controller: 'departments', action:'create', method: :post, local: true do |form| %>
-    <%= form.label :department_name, class: 'form-label' %></br></br>
-    <%= form.text_field :department_name, class:"form-control"  %></br></br>
-    <center>
-    <%= form.submit 'Add Department', class: 'btn btn-primary', style:'width:110px;background-color: #007bff;border-color: #007bff;' %>
-    <%= link_to "<button class='btn btn-primary' style='width:80px;background-color: #007bff;border-color: #007bff;'>Back</button>".html_safe, departments_path %>
-    </center>
-  <% end %>
+   <%= form_with model: @projects_user, scope: :projects_user, class:'form-group',url: addprojects_path, local: true do |form| %>
+<%= form.hidden_field :project_id, :value => @userid %>
+   <%= form.label :select_user, class: 'form-label' %></br></br>
+   <%= form.collection_select :user_id, Project.order(:project_name), :id, :project_name, {}, { class: "form-control" } %></br></br>
+     <center>
+       <%= form.submit 'Add', class: 'btn btn-primary', style:'width:110px;background-color: #007bff;border-color: #007bff;' %>
+       <%= link_to "<button class='btn btn-primary' style='width:80px;background-color: #007bff;border-color: #007bff;'>Back</button>".html_safe, user_path(:id => @userid, :department => @department) %>
+     </center>
+   <% end %>
 </div>

@@ -1,0 +1,10 @@
+<div class="container" style="margin-top:50px;">
+  <%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Back</button>".html_safe, users_path %>
+  <%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Add Project</button>".html_safe, new_addproject_path(:user_id => @userid,:department => @department) %></br></br>
+  <h3>Projects</h3>
+  <% @projectuser.each do |project| %>
+    <%= Project.find(project.project_id).project_name %></br></br>
+  <% end %>
+  <h3>Related Department</h3>
+  <%= @department %>
+</div>
