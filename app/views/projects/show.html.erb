@@ -1,11 +1,25 @@
+<center>
+  <p id="notice" style ="margin-top:50px;color:green;font-sixe:20px" ><%= notice %></p>
+</center>
 <div class="container" style="margin-top:50px;">
   <%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Back</button>".html_safe, projects_path %>
   <%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Add user</button>".html_safe, new_adduser_path(:project_id => @projectid,:department => @department) %></br></br>
   <h3>Members in this project</h3>
-  <% @projectuser.each do |users| %>
-    <%= User.find(users.user_id).first_name %>
-      <%= User.find(users.user_id).last_name %></br></br>
-  <% end %>
+  <table class="table table-borderless">
+    <% @projectuser.each do |users| %>
+      <tr>
+        <td><%= User.find(users.user_id).first_name %>
+        <%= User.find(users.user_id).last_name %></td>
+        <td><%= link_to 'Remove', adduser_path(:project_id => @projectid,:user_id => users.user_id),method: :delete, style: 'padding-left:20px;color:#007bff;text-decoration:none' %></td>
+      </tr>
+    <% end %>
+  </table>
   <h3>Related Department</h3>
   <%= @department %>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('#notice').fadeOut(3000);
+});
+</script>

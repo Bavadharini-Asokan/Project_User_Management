@@ -12,4 +12,10 @@ class AddusersController < ApplicationController
         render 'new'
       end
   end
+  def destroy
+    project = ProjectsUser.where(:project_id => params[:project_id]).where(:user_id => params[:user_id]).first
+    project.destroy
+    flash[:notice] = 'Removed from project'
+    redirect_to project_path(:id => project.project_id)
+  end
 end
