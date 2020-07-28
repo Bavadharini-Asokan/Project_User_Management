@@ -1,8 +1,33 @@
 <div class="container" style="margin-top:50px;">
 <h2 class="pull-left" style="color:#007bff">Department</h2>
-<%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Add Department</button>".html_safe, new_department_path %>
-<%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;'>Home</button>".html_safe, welcome_index_path %></br></br></br></br>
-<% @department.each do |department| %>
-  <%= department.department_name %></br></br>
-<% end %>
+<%= link_to "<button class='btn btn-primary pull-right buttons_style' >Add Department</button>".html_safe, new_department_path %>
+<%= link_to "<button class='btn btn-primary pull-right buttons_style' >Home</button>".html_safe, welcome_index_path %></br></br></br></br>
+<table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <% @department.each do |department| %>
+    <tr>
+      <td><%= department.department_name %></td>
+      <td><%= link_to "<button class='btn btn-primary buttons_style' style='width:80px;height:30px;'>Delete</button>".html_safe, department_path(:id => department.id), data: {confirm: "You want to delete this?"}, method: :delete %></td>
+    </tr>
+    <% end %>
+</table>
 </div>
+<style>
+.buttons_style{
+  width:120px;
+  background-color: white;
+  border-color: #007bff;
+  padding-left:10px;
+  margin-left:10px;
+  margin-top:10px;
+  color:#007bff;
+}
+.buttons_style:hover{
+  background-color: #007bff;
+}
+</style>

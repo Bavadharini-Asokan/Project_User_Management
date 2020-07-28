@@ -1,7 +1,7 @@
 <div class="container" style="margin-top:50px;">
 <h2 class="pull-left" style="color:#007bff">Projects</h2>
-<%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Add Project</button>".html_safe, new_project_path %>
-<%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;'>Home</button>".html_safe, welcome_index_path %></br></br>
+<%= link_to "<button class='btn btn-primary pull-right buttons_style'>Add Project</button>".html_safe, new_project_path %>
+<%= link_to "<button class='btn btn-primary pull-right buttons_style'>Home</button>".html_safe, welcome_index_path %></br></br>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -14,8 +14,23 @@
     <tr>
       <td><%= project.project_name %></td>
       <td><%= project.department_name %></td>
-      <td><%= link_to "<button class='btn btn-primary' style='width:60px;background-color: #007bff;border-color: #007bff;'>View</button>".html_safe, project_path(:department => project.department_name,:id => project.id)%>
+      <td><%= link_to "<button class='btn btn-primary buttons_style' style='width:50px;height:30px;'>View</button>".html_safe, project_path(:department => project.department_name,:id => project.id)%>
+      <%= link_to "<button class='btn btn-primary buttons_style' style='width:80px;height:30px;'>Delete</button>".html_safe, project_path(:id => project.id), data: {confirm: "You want to delete this?"}, method: :delete %></td>
     </tr>
   <% end %>
 </table>
 </div>
+<style>
+.buttons_style{
+  width:100px;
+  background-color: white;
+  border-color: #007bff;
+  padding-left:10px;
+  margin-left:10px;
+  margin-top:10px;
+  color:#007bff;
+}
+.buttons_style:hover{
+  background-color: #007bff;
+}
+</style>

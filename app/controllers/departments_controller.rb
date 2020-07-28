@@ -13,4 +13,9 @@ class DepartmentsController < ApplicationController
         render 'new'
       end
   end
+  def destroy
+    department = Department.find(params[:id])
+    department.destroy
+    redirect_to departments_path
+  end
 end

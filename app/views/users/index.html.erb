@@ -1,7 +1,7 @@
 <div class="container" style="margin-top:50px;">
 <h2 class="pull-left" style="color:#007bff">Users</h2>
-<%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Add User</button>".html_safe, new_user_path %>
-<%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;'>Home</button>".html_safe, welcome_index_path %>
+<%= link_to "<button class='btn btn-primary pull-right buttons_style' style='margin-left:10px;'>Add User</button>".html_safe, new_user_path %>
+<%= link_to "<button class='btn btn-primary pull-right buttons_style'>Home</button>".html_safe, welcome_index_path %>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -16,10 +16,21 @@
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.department_name %></td>
-      <td><%= link_to "<button class='btn btn-primary' style='width:60px;background-color: #007bff;border-color: #007bff;'>View</button>".html_safe, user_path(:department => user.department_name,:id => user.id)%>
+      <td><%= link_to "<button class='btn btn-primary buttons_style' style='width:60px;'>View</button>".html_safe, user_path(:department => user.department_name,:id => user.id)%>
+      <%= link_to "<button class='btn btn-primary buttons_style' style='width:80px;height:30px;'>Delete</button>".html_safe, project_path(:id => user.id), data: {confirm: "You want to delete this?"}, method: :delete %></td>
     </tr>
   <% end %>
 </table>
 </div>
 
-</div>
+<style>
+  .buttons_style{
+    width:100px;
+    background-color: white;
+    border-color: #007bff;
+    color:#007bff;
+  }
+  .buttons_style:hover{
+    background-color: #007bff;
+  }
+</style>

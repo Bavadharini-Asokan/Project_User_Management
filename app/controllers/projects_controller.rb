@@ -18,4 +18,9 @@ class ProjectsController < ApplicationController
     @projectuser = ProjectsUser.where(:project_id => params[:id])
     @department = params[:department]
   end
+  def destroy
+    project = Project.find(params[:id])
+    project.destroy
+    redirect_to projects_path
+  end
 end

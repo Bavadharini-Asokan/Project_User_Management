@@ -1,6 +1,26 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;width:100%;" >
 
-<div class="container" style="text-align:center;margin-top:100px;">
-<%= link_to "<button class='btn btn-primary'  style='width:150px;background-color: #007bff;border-color: #007bff;'>Projects</button>".html_safe, projects_path %></br></br>
-<%= link_to "<button class='btn btn-primary'  style='width:150px;background-color: #007bff;border-color: #007bff;'>Users</button>".html_safe, users_path %></br></br>
-<%= link_to "<button class='btn btn-primary' style='width:150px;background-color: #007bff;border-color: #007bff;'>Departments</button>".html_safe, departments_path%></br></br>
-</div>
+  <center>
+  <%= link_to "<button class='btn btn-outline-primary buttons_style'>Projects</button>".html_safe, projects_path %>
+  <%= link_to "<button class='btn btn-outline-primary buttons_style' >Users</button>".html_safe, users_path %>
+  <%= link_to "<button class='btn btn-outline-primary buttons_style'>Departments</button>".html_safe, departments_path%>
+  <%= link_to "<button class='btn btn-outline-primary buttons_style'>Home</button>".html_safe, welcome_index_path %>
+  </center>
+</nav>
+<center><h4  style="margin-top:10px;">PROJECTS AND USERS MANAGEMENT</h4></center>
+
+<style>
+  .buttons_style{
+    width:100px;
+    background-color: white;
+    border-color: #007bff;
+    padding-left:10px;
+    margin-left:10px;
+    margin-top:10px;
+    color: #007bff
+  }
+  .buttons_style:hover{
+    background-color: #007bff;
+    color: white;
+  }
+</style>

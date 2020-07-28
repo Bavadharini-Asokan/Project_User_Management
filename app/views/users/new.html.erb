@@ -14,8 +14,22 @@
     <%= form.label :department, class: 'form-label' %></br></br>
     <%= form.collection_select :department_id, Department.order(:department_name), :id, :department_name, {}, { class: "form-control" } %></br></br>
     <center>
-    <%= form.submit 'Add User', class: 'btn btn-primary', style:'width:100px;background-color: #007bff;border-color: #007bff;' %>
-    <%= link_to "<button class='btn btn-primary' style='width:80px;background-color: #007bff;border-color: #007bff;'>Back</button>".html_safe, users_path %>
+    <%= form.submit 'Add User', class: 'btn btn-primary buttons_style' %>
+    <%= link_to "<button class='btn btn-primary buttons_style'>Back</button>".html_safe, users_path %>
     </center>
   <% end %>
 </div>
+<style>
+  .buttons_style{
+    width:100px;
+    background-color: white;
+    border-color: #007bff;
+    padding-left:10px;
+    margin-left:10px;
+    margin-top:10px;
+    color: #007bff;
+  }
+  .buttons_style:hover{
+    background-color: #007bff;
+  }
+</style>

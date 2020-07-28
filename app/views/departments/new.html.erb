@@ -10,8 +10,19 @@
     <%= form.label :department_name, class: 'form-label' %></br></br>
     <%= form.text_field :department_name, class:"form-control"  %></br></br>
     <center>
-    <%= form.submit 'Add Department', class: 'btn btn-primary', style:'width:110px;background-color: #007bff;border-color: #007bff;' %>
-    <%= link_to "<button class='btn btn-primary' style='width:80px;background-color: #007bff;border-color: #007bff;'>Back</button>".html_safe, departments_path %>
+    <%= form.submit 'Add', class: 'btn btn-primary buttons_style' %>
+    <%= link_to "<button class='btn btn-primary buttons_style'>Back</button>".html_safe, departments_path %>
     </center>
   <% end %>
 </div>
+<style>
+  .buttons_style{
+    width:80px;
+    background-color: white;
+    border-color: #007bff;
+    color: #007bff;
+  }
+  .buttons_style:hover{
+    background-color: #007bff;
+  }
+</style>
