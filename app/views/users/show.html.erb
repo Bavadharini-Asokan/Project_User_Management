@@ -1,5 +1,9 @@
 <div class="container" style="margin-top:50px;">
+<<<<<<< HEAD
   <%= link_to "<button class='btn btn-primary pull-right buttons_style'>Back</button>".html_safe, users_path %>
+=======
+  <%= link_to "<button class='btn btn-primary pull-right' style='width:100px;background-color: #007bff;border-color: #007bff;margin-left:10px;'>Back</button>".html_safe, users_path %>
+>>>>>>> 6a451b316fdca8f24bd0c0ff374cd08288c50d7b
   <h3>Projects</h3>
   <% @projectuser.each do |project| %>
     <%= Project.find(project.project_id).project_name %></br></br>

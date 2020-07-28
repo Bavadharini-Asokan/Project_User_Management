@@ -10,7 +10,11 @@
       <tr>
         <td><%= User.find(users.user_id).first_name %>
         <%= User.find(users.user_id).last_name %></td>
+<<<<<<< HEAD
         <td><%= link_to 'Remove', adduser_path(:project_id => @projectid, :user_id => users.user_id), style:'color:#007bff;text-decoration:none;', data: {confirm: "You want to delete this?"}, method: :delete %></td>
+=======
+        <td><%= link_to 'Remove', adduser_path(:project_id => @projectid,:user_id => users.user_id),method: :delete, style: 'padding-left:20px;color:#007bff;text-decoration:none' %></td>
+>>>>>>> 6a451b316fdca8f24bd0c0ff374cd08288c50d7b
       </tr>
     <% end %>
   </table>
@@ -23,6 +27,7 @@ $(document).ready(function(){
   $('#notice').fadeOut(3000);
 });
 </script>
+<<<<<<< HEAD
 <style>
   .buttons_style{
     width:100px;
@@ -35,3 +40,5 @@ $(document).ready(function(){
     background-color: #007bff;
   }
 </style>
+=======
+>>>>>>> 6a451b316fdca8f24bd0c0ff374cd08288c50d7b
